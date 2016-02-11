@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.bootstrap"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def supportVersion = '23.1.1'
+def butterKnifeVersion = '7.0.1'
+def retrofitVersion = '1.9.0'
+def okhttpVersion = '2.4.0'
+def calligraphyVersion = '2.1.0'
+def roboguiceVersion = '3.0'
+def smoothProgressbarVersion = '1.0.2'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    //Google
+    compile "com.android.support:appcompat-v7:$supportVersion"
+    compile "com.android.support:design:$supportVersion"
+
+    //Jake Wharton
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    compile "com.squareup.retrofit:retrofit:$retrofitVersion"
+    compile "com.squareup.okhttp:okhttp:$okhttpVersion"
+
+    //font
+    compile "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
+
+    //view
+    compile "com.github.castorflex.smoothprogressbar:library-circular:$smoothProgressbarVersion"
+
+
+
+    //di
+    compile "org.roboguice:roboguice:$roboguiceVersion"
+    provided "org.roboguice:roboblender:$roboguiceVersion"
+
+
+}
