@@ -46,8 +46,6 @@ dependencies {
     //view
     compile "com.github.castorflex.smoothprogressbar:library-circular:$smoothProgressbarVersion"
 
-
-
     //di
     compile "org.roboguice:roboguice:$roboguiceVersion"
     provided "org.roboguice:roboblender:$roboguiceVersion"
